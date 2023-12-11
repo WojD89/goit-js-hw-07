@@ -1,10 +1,13 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-const galleryContainer = document.querySelector(".gallery");
+const galleryContainer = document.querySelector("ul.gallery");
 galleryContainer.addEventListener("click", (event) => {
   event.preventDefault();
   const imgSrc = event.target;
-  console.log(imgSrc);
+  
+  if (target.nodeName !== "IMG") {
+    return;
+  }
   const lightbox = basicLightbox.create(
     `<img src="${imgSrc.dataset.source}" >`
   );
@@ -18,14 +21,14 @@ galleryContainer.addEventListener("click", (event) => {
 });
 const images = galleryItems.map((item) => {
   return `<div class="gallery__item">
-            <a class="gallery__link" href="${item.original}">
+            <li><a class="gallery__link" href="${item.original}">
                 <img
                     class="gallery__image"
                     src="${item.preview}"
                     data-source="${item.original}"
                     alt="${item.description}"
                 />
-            </a>
+            </a></li>
         </div>`;
 });
 galleryContainer.insertAdjacentHTML("beforeend", images.join(""));

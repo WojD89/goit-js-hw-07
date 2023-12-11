@@ -5,13 +5,15 @@ const galleryContainer = document.querySelector("ul.gallery");
 const createGallery = galleryItems
   .map(
     (image) =>
-      `<a class="gallery__item" href="${image.original}">
-        <img
-          class="gallery__image"
-          src="${image.preview}"
-          alt="${image.description}"
-        />
-      </a>`
+      `<li>
+            <a class="gallery__item" href="${image.original}">
+              <img
+                class="gallery__image"
+                src="${image.preview}"
+                alt="${image.description}"
+              />
+            </a>
+      </li>`
   )
   .join("");
 
