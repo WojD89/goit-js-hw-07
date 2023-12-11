@@ -5,7 +5,7 @@ galleryContainer.addEventListener("click", (event) => {
   event.preventDefault();
   const imgSrc = event.target;
   
-  if (target.nodeName !== "IMG") {
+  if (imgSrc.nodeName !== "IMG") {
     return;
   }
   const lightbox = basicLightbox.create(
